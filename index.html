@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning Items</title>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background-color: brown;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      main {
+        margin: auto;
+        max-width: 900px;
+        background-color: white;
+        padding: 30px;
+      }
+
+      #lefthalf {
+        background-color: red;
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .list {
+        padding-left: 20px;
+      }
+
+      #righthalf {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      /* img */
+      img {
+      }
+
+      /* container */
+      .container {
+        background-color: aliceblue;
+        height: 60vh;
+        display: flex;
+        gap: 20px;
+      }
+
+      .tophalf {
+        height: 300px;
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-image: url(/img/laku.webp);
+        background-position: center;
+        background-size: cover;
+        clip-path: polygon(
+          20% 0%,
+          80% 0%,
+          100% 20%,
+          100% 80%,
+          80% 100%,
+          20% 100%,
+          0% 80%,
+          0% 20%
+        );
+      }
+
+      .bottomhalf {
+        display: flex;
+        flex: 1;
+      }
+
+      footer {
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: gray;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 10px;
+      }
+
+      nav ul li a {
+        padding: 10px;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: bisque;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 3px solid blueviolet;
+        margin-bottom: 30px;
+      }
+
+      header button {
+        background-color: wheat;
+        border: none;
+        height: 40px;
+        width: 60px;
+      }
+
+      .laku {
+        width: 250px;
+        float: left;
+        margin-right: 10px;
+        clip-path: polygon(100% 0, 77% 56%, 88% 90%, 20% 91%, 0 0);
+        shape-outside: polygon(100% 0, 77% 56%, 88% 90%, 20% 91%, 0 0);
+      }
+
+      @media screen and (max-width: 700px) {
+        .container {
+          flex-direction: column;
+          min-height: 1000px;
+        }
+        #lefthalf {
+          order: 2;
+        }
+        #rightthalf {
+          order: 1;
+        }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <nav>
+          <ul>
+            <li><a href="">Logo</a></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Something</a></li>
+          </ul>
+        </nav>
+        <button>Login</button>
+      </header>
+
+      <div class="container">
+        <div class="box" id="lefthalf">
+          <div class="list">
+            <h3>Header</h3>
+            <ul>
+              <li>Post 1</li>
+              <li>Post 2</li>
+            </ul>
+          </div>
+        </div>
+        <div class="box" id="righthalf">
+          <div class="tophalf"></div>
+          <div class="bottomhalf"></div>
+          <p>
+            <img class="laku" src="./img/laku2.webp" />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+            iusto dolorem? Perspiciatis laudantium iusto harum commodi molestiae
+            dolores, odit dolore autem, totam suscipit mollitia hic id magnam!
+            Quidem, libero tempora! Quam praesentium, nihil facere odio cumque
+            totam mollitia rerum libero saepe, autem voluptas. Magni quam
+            perspiciatis vel eligendi eos iste! Dolore nobis cumque dolorum
+            distinctio placeat doloremque aliquid harum enim!
+          </p>
+        </div>
+      </div>
+      <footer>Footer</footer>
+    </main>
+  </body>
+</html>
